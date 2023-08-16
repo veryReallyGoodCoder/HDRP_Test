@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+            Debug.Log("grounded");
         }
 
         Vector3 move = transform.right * x + transform.forward * z;
@@ -80,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         if (jumpPressed && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            Debug.Log("jump");
         }
 
         velocity.y += gravity * Time.deltaTime;
